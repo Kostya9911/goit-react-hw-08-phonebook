@@ -1,8 +1,11 @@
 import { ContactItem } from 'components/ContactItem/ContactItem';
 import css from './ContactList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from 'Redux/operations';
-import { selectContacts, selectVisibleContacts } from 'Redux/selectors';
+import { deleteContact } from 'Redux/contacts/operations';
+import {
+  selectContacts,
+  selectVisibleContacts,
+} from 'Redux/contacts/selectors';
 
 export const ContactList = () => {
   const contacts = useSelector(selectContacts);
@@ -20,7 +23,7 @@ export const ContactList = () => {
         {contacts.length}
       </p>
       <ol className={css.oll}>
-        {filteredContacts.map(({ id, name, phone }) => {
+        {filteredContacts.map(({ id, name, number }) => {
           return (
             <li key={id}>
               <ContactItem
@@ -28,7 +31,8 @@ export const ContactList = () => {
                   handleDeleteContact(id);
                 }}
                 name={name}
-                number={phone}
+                number={number}
+                id={id}
               />
             </li>
           );
