@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
+import useSound from 'use-sound';
 import css from './ContactItem.module.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { patchContact } from 'Redux/contacts/operations';
+import btn_snd from '../Sounds/btn_snd.mp3';
 
 export const ContactItem = ({ onDelete, name, number, id }) => {
   const [editContactState, setEditContactState] = useState(false);
@@ -10,6 +12,9 @@ export const ContactItem = ({ onDelete, name, number, id }) => {
   const [currentNumber, setCurrentNumber] = useState(number);
 
   const dispatch = useDispatch();
+
+  const [play, { stop }] = useSound(btn_snd, { volume: 1 });
+  // const [isHovering, setIsHovering] = useState(false);
 
   const cancelChangeContact = () => {
     setCurrentName(name);
@@ -66,13 +71,26 @@ export const ContactItem = ({ onDelete, name, number, id }) => {
               form="data"
               type="submit"
               onClick={changeStateConponents}
+              onMouseEnter={() => {
+                play();
+              }}
             >
               Edit
             </button>
           </div>
         )}
 
-        <button className={css.btn} type="button" onClick={onDelete}>
+        <button
+          className={css.btn}
+          type="button"
+          onClick={onDelete}
+          onMouseEnter={() => {
+            play();
+          }}
+          // onMouseLeave={() => {
+          //   stop();
+          // }}
+        >
           Delete
         </button>
       </div>
