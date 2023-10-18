@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-
+import css from './Filter.module.css';
 import { changeFilter } from 'Redux/contacts/filterSlice';
 
 export const Filter = () => {
@@ -13,9 +13,10 @@ export const Filter = () => {
     <label>
       Find contact by name
       <input
+        className={css.input}
+        autoComplete="off"
         type="text"
         name="filter"
-        // value={filter}
         onChange={handleChangeFilter}
       />
     </label>

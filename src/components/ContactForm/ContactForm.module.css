@@ -19,17 +19,26 @@ label {
 }
 
 input {
+  height: 25px;
+  background-color: inherit;
   border: 1px solid rgb(180, 180, 180);
+  outline: none;
+  padding-left: 10px;
+  color: inherit;
 }
 
 .add {
   cursor: pointer;
 
   width: 396px;
-  border: 1px solid rgb(180, 180, 180);
+  height: 25px;
+  border: 1px solid #32cd32;
   border-radius: 4px;
-  background-color: lightgray;
+  background-color: inherit;
+  color: inherit;
 }
 .add:hover {
-  background-color: lightskyblue;
+  background-color: #32cd32;
+  color: #1d1b1b;
+  font-weight: 700;
 }

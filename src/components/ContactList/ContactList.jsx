@@ -10,6 +10,7 @@ import {
 export const ContactList = () => {
   const contacts = useSelector(selectContacts);
   const filteredContacts = useSelector(selectVisibleContacts);
+  // console.log(selectVisibleContacts);
   const dispatch = useDispatch();
 
   const handleDeleteContact = id => {

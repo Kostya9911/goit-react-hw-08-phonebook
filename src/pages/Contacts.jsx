@@ -3,7 +3,7 @@ import {
   useDispatch,
   // useSelector
 } from 'react-redux';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 // import { TaskList } from 'components/TaskList/TaskList';
 // import { TaskEditor } from 'components/TaskEditor/TaskEditor';
@@ -27,9 +27,11 @@ export default function Contacts() {
 
   return (
     <>
-      <Helmet>
-        <title>Your contacts</title>
-      </Helmet>
+      <HelmetProvider>
+        <Helmet>
+          <title>Your contacts</title>
+        </Helmet>
+      </HelmetProvider>
 
       <div className={css.app}>
         <h1>Phonebook</h1>

@@ -2,86 +2,77 @@ import PropTypes from 'prop-types';
 import css from './ContactItem.module.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { patchContact } from 'Redux/contacts/operations';
 
 export const ContactItem = ({ onDelete, name, number, id }) => {
-  const [buttonState, setButtonState] = useState(false);
-  // const [buttonType, setButtonType] = useState('button');
-  const [buttonName, setButtonName] = useState(false);
-  const [curName, setCurName] = useState(name);
-  const [curNumber, setCurNumber] = useState(number);
+  const [editContactState, setEditContactState] = useState(false);
+  const [currentName, setCurrentName] = useState(name);
+  const [currentNumber, setCurrentNumber] = useState(number);
 
   const dispatch = useDispatch();
 
   const cancelChangeContact = () => {
-    setCurName(name);
-    setCurNumber(number);
-    setButtonState(!buttonState);
+    setCurrentName(name);
+    setCurrentNumber(number);
+    setEditContactState(!editContactState);
   };
+
+  const changeStateConponents = () => setEditContactState(!editContactState);
 
   const handleSubmitFormChangeContact = e => {
     e.preventDefault();
     const contact = {
-      name: curName,
-      number: curNumber,
+      name: currentName,
+      number: currentNumber,
       id,
     };
-    setButtonState(false);
-    console.log(contact);
+    dispatch(patchContact(contact));
+    changeStateConponents();
   };
-  const handleEditContact = e => {
-    e.preventDefault();
 
-    setButtonState(!buttonState);
-    setButtonName(!buttonName);
-    // setButtonType('submit');
-  };
   return (
     <div className={css.item}>
-      {buttonState ? (
-        <form
-          // id="data"
-          autoComplete="off"
-          onSubmit={handleSubmitFormChangeContact}
-        >
+      {editContactState && (
+        <form autoComplete="off" onSubmit={handleSubmitFormChangeContact}>
           <input
             type="text"
             name="name"
-            onChange={e => setCurName(e.currentTarget.value)}
-            value={curName}
+            onChange={e => setCurrentName(e.currentTarget.value)}
+            value={currentName}
           />
 
           <input
             type="tel"
             name="number"
-            onChange={e => setCurNumber(e.currentTarget.value)}
-            value={curNumber}
+            onChange={e => setCurrentNumber(e.currentTarget.value)}
+            value={currentNumber}
           />
           <button type="submit">Save</button>
           <button type="button" onClick={cancelChangeContact}>
             Cancel
           </button>
         </form>
-      ) : (
-        <p>{name}:</p>
       )}
-
       <div className={css.equal}>
-        {!buttonState && (
-          <>
-            <p>{number}</p>
+        {!editContactState && (
+          <div className={css.wrapper_contact_date}>
+            <div className={css.wrapper_contact_date}>
+              <p>{name}:</p>
+              <p>{number}</p>
+            </div>
+
             <button
-              className={css.delete}
-              // form="data"
-              type="button"
-              // {buttonType}
-              onClick={handleEditContact}
+              className={css.btn}
+              form="data"
+              type="submit"
+              onClick={changeStateConponents}
             >
               Edit
             </button>
-          </>
+          </div>
         )}
 
-        <button className={css.delete} type="button" onClick={onDelete}>
+        <button className={css.btn} type="button" onClick={onDelete}>
           Delete
         </button>
       </div>

@@ -1,6 +1,9 @@
 @import-normalize; /* bring in normalize.css styles */
 
 body {
+  background-color: #1d1b1b;
+  color: #32cd32;
+
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -8,6 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 0 20px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 h2,

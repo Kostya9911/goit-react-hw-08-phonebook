@@ -1,7 +1,7 @@
 .item {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+  /* align-items: center; */
 }
 
 /* .item p :not(:last-child) {
@@ -9,23 +9,40 @@
 } */
 .equal {
   display: flex;
-  align-items: center;
+  justify-content: end;
+  align-items: baseline;
+  width: 200%;
 }
 
 .equal p {
-  margin-right: 20px;
+  min-width: 100px;
+  /* margin-right: auto; */
+  /* margin-left: auto; */
+  /* margin-right: 20px; */
 }
 
-.delete {
+.wrapper_contact_date {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+}
+.wrapper_contact_date div {
+  justify-content: space-between;
+}
+
+.btn {
   cursor: pointer;
+  margin-left: 5px;
+  width: 100px;
+  height: 25px;
+  border: 1px solid #32cd32;
 
-  width: 60px;
-  height: 20px;
-  border: 1px solid rgb(180, 180, 180);
   border-radius: 4px;
-  background-color: lightgrey;
+  background-color: inherit;
+  color: inherit;
 }
 
-.delete:hover {
-  background-color: lightcoral;
+.btn:hover {
+  background-color: #32cd32;
+  color: #1d1b1b;
 }

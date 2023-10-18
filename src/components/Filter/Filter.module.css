@@ -1,0 +1,10 @@
+.input {
+  width: 100%;
+  height: 2em;
+  background-color: inherit;
+  color: inherit;
+  outline: none;
+}
+label {
+  width: 100%;
+}
