@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://Kostya9911.github.io/goit-react-hw-08-phonebook/",
   "dependencies": {
+    "@csstools/normalize.css": "^12.0.0",
     "@redux-devtools/extension": "^3.2.5",
     "@reduxjs/toolkit": "^1.9.6",
     "@testing-library/jest-dom": "^5.16.3",
@@ -11,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.5.1",
     "nanoid": "^4.0.2",
+    "normalize.css": "^8.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",

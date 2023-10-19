@@ -1,15 +1,16 @@
-form {
+.contact_form {
   display: flex;
   flex-direction: column;
-
   gap: 15px;
+  /* margin: 0 auto; */
+  margin-bottom: 40px;
 
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   padding: 10px;
   width: 400px;
 }
 
-label {
+.contact_form_label {
   font-size: 15px;
   display: flex;
   flex-direction: column;
@@ -18,26 +19,40 @@ label {
   width: 396px;
 }
 
-input {
-  height: 25px;
+.contact_form_input {
+  height: 35px;
   background-color: inherit;
-  border: 1px solid rgb(180, 180, 180);
+  border: 1px solid darkgray;
+  border-radius: 4px;
   outline: none;
   padding-left: 10px;
-  color: inherit;
+  color: #2ba62b;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: inherit;
 }
 
-.add {
-  cursor: pointer;
+.contact_form_input:focus {
+  background-color: #2ba62b;
+  border: 1px solid #2ba62b;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: inherit;
+  color: #1d1b1b;
+}
 
+.btn_add {
+  font-size: 18px;
+  font-weight: 700;
   width: 396px;
-  height: 25px;
+  height: 35px;
   border: 1px solid #32cd32;
   border-radius: 4px;
   background-color: inherit;
   color: inherit;
+  cursor: pointer;
 }
-.add:hover {
+.btn_add:hover {
   background-color: #32cd32;
   color: #1d1b1b;
   font-weight: 700;

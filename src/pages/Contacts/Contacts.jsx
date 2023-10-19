@@ -1,25 +1,16 @@
 import { useEffect } from 'react';
-import {
-  useDispatch,
-  // useSelector
-} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-
-// import { TaskList } from 'components/TaskList/TaskList';
-// import { TaskEditor } from 'components/TaskEditor/TaskEditor';
-
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 
-// import { selectLoading } from 'redux/tasks/selectors';
 import { fetchContacts } from 'Redux/contacts/operations';
 
-import css from '../components/App/App.module.css';
+import css from './Contacts.module.css';
 import { Filter } from 'components/Filter/Filter';
 
 export default function Contacts() {
   const dispatch = useDispatch();
-  // const isLoading = useSelector(selectLoading);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -34,11 +25,12 @@ export default function Contacts() {
       </HelmetProvider>
 
       <div className={css.app}>
-        <h1>Phonebook</h1>
-        <ContactForm />
-        <h2>Contacts</h2>
-        <Filter />
-        {/* <div>{isLoading && 'Request in progress...'}</div> */}
+        <div className={css.wrapper_cotacts_forms}>
+          <h1>Phonebook</h1>
+          <ContactForm />
+          <h2 className={css.title_contacts}>Contacts</h2>
+          <Filter />
+        </div>
         <ContactList />
       </div>
     </>

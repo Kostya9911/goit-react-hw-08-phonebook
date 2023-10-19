@@ -18,15 +18,15 @@ export const ContactList = () => {
   };
 
   return (
-    <div>
-      <p>
+    <div className={css.wrapper_contactList}>
+      <p className={css.counterVisibleContacts}>
         {filteredContacts.length}&nbsp;of&nbsp;
         {contacts.length}
       </p>
       <ol className={css.oll}>
         {filteredContacts.map(({ id, name, number }) => {
           return (
-            <li key={id}>
+            <li key={id} className={css.contactListItem}>
               <ContactItem
                 onDelete={() => {
                   handleDeleteContact(id);

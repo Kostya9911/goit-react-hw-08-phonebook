@@ -1,0 +1,11 @@
+.app {
+  width: 100%;
+}
+
+.wrapper_cotacts_forms {
+  width: 400px;
+  margin: 0px auto 20px auto;
+}
+.title_contacts {
+  /* margin: inherit; */
+}

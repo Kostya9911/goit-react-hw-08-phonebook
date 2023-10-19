@@ -1,5 +1,17 @@
+.wrapper_contactList {
+  margin: 0 auto 50px auto;
+}
+
 .oll {
-  display: inline-block;
-  width: 500px;
+  display: block;
+  margin: 0 auto;
+  width: 600px;
   padding-left: 17px;
+}
+.counterVisibleContacts {
+  width: max-content;
+  margin: 0px auto 20px auto;
+}
+.contactListItem {
+  margin-bottom: 5px;
 }

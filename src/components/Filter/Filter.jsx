@@ -10,10 +10,10 @@ export const Filter = () => {
   };
 
   return (
-    <label>
+    <label className={css.label_filter}>
       Find contact by name
       <input
-        className={css.input}
+        className={css.input_filter}
         autoComplete="off"
         type="text"
         name="filter"

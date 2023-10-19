@@ -1,13 +1,14 @@
 @import-normalize; /* bring in normalize.css styles */
-
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body {
   background-color: #1d1b1b;
   color: #32cd32;
 
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 0 20px;
@@ -17,9 +18,4 @@ body {
 h2,
 p {
   margin: 3px;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
