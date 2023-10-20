@@ -22,8 +22,8 @@
 .input_filter:focus {
   background-color: #2ba62b;
   border: 1px solid #2ba62b;
-  font-size: 18px;
-  font-weight: 700;
-  font-family: inherit;
   color: #1d1b1b;
+}
+.input_filter:hover {
+  border: 1px solid #2ba62b;
 }

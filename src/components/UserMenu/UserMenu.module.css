@@ -7,3 +7,22 @@
 .username {
   font-weight: 700;
 }
+
+.btnLogOut {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  width: 100px;
+  height: 25px;
+  border: 1px solid #32cd32;
+  border-radius: 4px;
+  background-color: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.btnLogOut:hover {
+  background-color: #32cd32;
+  color: #1d1b1b;
+  font-weight: 700;
+}

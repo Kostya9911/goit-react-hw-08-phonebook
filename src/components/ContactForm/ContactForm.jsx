@@ -1,13 +1,15 @@
-// import { nanoid } from 'nanoid';
 import css from './ContactForm.module.css';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'Redux/contacts/operations';
 import { selectContacts } from 'Redux/contacts/selectors';
+import useSound from 'use-sound';
+import btn_snd from '../Sounds/btn_snd.mp3';
 
 export const ContactForm = () => {
   const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
+  const [play, { stop }] = useSound(btn_snd, { volume: 0.5 });
 
   const handleAddContact = (name, number) => {
     const isExist = contacts.find(contact => contact.name === name);
@@ -18,7 +20,6 @@ export const ContactForm = () => {
     }
 
     const contact = {
-      // id: nanoid(),
       name,
       number,
     };
@@ -63,7 +64,16 @@ export const ContactForm = () => {
         />
       </label>
 
-      <button type="submit" className={css.btn_add}>
+      <button
+        type="submit"
+        onMouseEnter={() => {
+          play();
+        }}
+        onMouseLeave={() => {
+          stop();
+        }}
+        className={css.btn_add}
+      >
         Add contact
       </button>
     </form>

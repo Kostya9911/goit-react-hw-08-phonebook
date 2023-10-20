@@ -1,9 +1,51 @@
-.form {
+.formRegister {
   width: 320px;
+  margin: 100px auto 0 auto;
 }
 
-.label {
+.labelRegister {
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
+  font-size: 15px;
+}
+
+.inputRegister {
+  height: 35px;
+  background-color: inherit;
+  border: 1px solid darkgray;
+  border-radius: 4px;
+  outline: none;
+  padding-left: 10px;
+  color: #2ba62b;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: inherit;
+}
+
+.inputRegister:focus {
+  background-color: #2ba62b;
+  border: 1px solid #2ba62b;
+  color: #1d1b1b;
+}
+.inputRegister:hover {
+  border: 1px solid #2ba62b;
+}
+
+.btnRegister {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  width: 150px;
+  height: 35px;
+  border: 1px solid #32cd32;
+  border-radius: 4px;
+  background-color: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.btnRegister:hover {
+  background-color: #32cd32;
+  color: #1d1b1b;
+  font-weight: 700;
 }

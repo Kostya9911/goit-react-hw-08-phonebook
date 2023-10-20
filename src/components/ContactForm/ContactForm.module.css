@@ -2,10 +2,8 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  /* margin: 0 auto; */
   margin-bottom: 40px;
 
-  /* border: 1px solid gray; */
   padding: 10px;
   width: 400px;
 }
@@ -35,15 +33,15 @@
 .contact_form_input:focus {
   background-color: #2ba62b;
   border: 1px solid #2ba62b;
-  font-size: 18px;
-  font-weight: 700;
-  font-family: inherit;
   color: #1d1b1b;
 }
-
+.contact_form_input:hover {
+  border: 1px solid #2ba62b;
+}
 .btn_add {
   font-size: 18px;
   font-weight: 700;
+  font-family: inherit;
   width: 396px;
   height: 35px;
   border: 1px solid #32cd32;

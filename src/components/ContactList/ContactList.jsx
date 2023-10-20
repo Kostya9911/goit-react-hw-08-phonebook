@@ -1,4 +1,4 @@
-import { ContactItem } from 'components/ContactItem/ContactItem';
+import { ContactItem } from '../ContactItem/ContactItem';
 import css from './ContactList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'Redux/contacts/operations';
@@ -10,7 +10,6 @@ import {
 export const ContactList = () => {
   const contacts = useSelector(selectContacts);
   const filteredContacts = useSelector(selectVisibleContacts);
-  // console.log(selectVisibleContacts);
   const dispatch = useDispatch();
 
   const handleDeleteContact = id => {
@@ -23,6 +22,7 @@ export const ContactList = () => {
         {filteredContacts.length}&nbsp;of&nbsp;
         {contacts.length}
       </p>
+
       <ol className={css.oll}>
         {filteredContacts.map(({ id, name, number }) => {
           return (

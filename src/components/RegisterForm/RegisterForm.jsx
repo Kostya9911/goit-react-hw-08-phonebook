@@ -1,9 +1,13 @@
 import { useDispatch } from 'react-redux';
 import { register } from '../../Redux/auth/operations';
+import useSound from 'use-sound';
 import css from './RegisterForm.module.css';
+import btn_snd from '../Sounds/btn_snd.mp3';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
+
+  const [play, { stop }] = useSound(btn_snd, { volume: 0.5 });
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -20,20 +24,35 @@ export const RegisterForm = () => {
   };
 
   return (
-    <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-      <label className={css.label}>
+    <form
+      className={css.formRegister}
+      onSubmit={handleSubmit}
+      autoComplete="off"
+    >
+      <label className={css.labelRegister}>
         Username
-        <input type="text" name="name" />
+        <input className={css.inputRegister} type="text" name="name" />
       </label>
-      <label className={css.label}>
+      <label className={css.labelRegister}>
         Email
-        <input type="email" name="email" />
+        <input className={css.inputRegister} type="email" name="email" />
       </label>
-      <label className={css.label}>
+      <label className={css.labelRegister}>
         Password
-        <input type="password" name="password" />
+        <input className={css.inputRegister} type="password" name="password" />
       </label>
-      <button type="submit">Register</button>
+      <button
+        className={css.btnRegister}
+        type="submit"
+        onMouseEnter={() => {
+          play();
+        }}
+        onMouseLeave={() => {
+          stop();
+        }}
+      >
+        Register
+      </button>
     </form>
   );
 };

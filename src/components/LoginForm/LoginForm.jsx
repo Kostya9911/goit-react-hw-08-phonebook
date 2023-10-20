@@ -1,9 +1,12 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../Redux/auth/operations';
+import useSound from 'use-sound';
 import css from './LoginForm.module.css';
-
+import btn_snd from '../Sounds/btn_snd.mp3';
 export const LoginForm = () => {
   const dispatch = useDispatch();
+
+  const [play, { stop }] = useSound(btn_snd, { volume: 0.5 });
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -18,16 +21,27 @@ export const LoginForm = () => {
   };
 
   return (
-    <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-      <label className={css.label}>
+    <form className={css.formLogIn} onSubmit={handleSubmit} autoComplete="off">
+      <label className={css.labelLogIn}>
         Email
-        <input type="email" name="email" />
+        <input className={css.inputLogIn} type="email" name="email" />
       </label>
-      <label className={css.label}>
+      <label className={css.labelLogIn}>
         Password
-        <input type="password" name="password" />
+        <input className={css.inputLogIn} type="password" name="password" />
       </label>
-      <button type="submit">Log In</button>
+      <button
+        className={css.btnLogIn}
+        type="submit"
+        onMouseEnter={() => {
+          play();
+        }}
+        onMouseLeave={() => {
+          stop();
+        }}
+      >
+        Log In
+      </button>
     </form>
   );
 };
